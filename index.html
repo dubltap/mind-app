@@ -3,48 +3,1353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mind Expander - FREE | dubltap.io</title>
-  <meta name="description" content="Daily cognitive enhancement using Hermetic principles and sacred geometry. 5 minutes. 7 ancient principles. One unshakeable mind.">
+  <title>Mind Expander | Cognitive Enhancement &amp; Daily Rituals</title>
+  <meta name="description" content="Free AI-powered cognitive enhancement. Daily rituals with Hermetic principles, Golden Ratio pacing, and Sacred Geometry visualization.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root{--sunset-gold:#F4A261;--sunset-coral:#E76F51;--ocean-deep:#264653;--ocean-teal:#2A9D8F;--sand-light:#FDF8F3;--sand-dark:#4A4238}
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'DM Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--sand-light),#fff);color:var(--sand-dark);text-align:center;padding:2rem}
-    .container{max-width:600px}
-    .logo{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;color:var(--ocean-deep);margin-bottom:3rem}
-    .logo span{color:var(--sunset-gold)}
-    .icon{font-size:5rem;margin-bottom:1.5rem}
-    .free-badge{display:inline-block;background:linear-gradient(135deg,var(--sunset-gold),var(--sunset-coral));color:var(--ocean-deep);padding:0.5rem 1rem;border-radius:2rem;font-weight:700;margin-bottom:1rem}
-    h1{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;color:var(--ocean-deep);margin-bottom:1rem}
-    h1 span{background:linear-gradient(135deg,var(--sunset-gold),var(--sunset-coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .tagline{font-size:1.25rem;color:var(--sand-dark);margin-bottom:2rem;line-height:1.6}
-    .email-form{display:flex;gap:0.75rem;max-width:400px;margin:0 auto 1.5rem}
-    .email-form input{flex:1;padding:1rem 1.25rem;border:2px solid #e0d6cc;border-radius:12px;font-size:1rem;outline:none;transition:border-color 0.2s}
-    .email-form input:focus{border-color:var(--ocean-teal)}
-    .email-form button{padding:1rem 1.5rem;background:linear-gradient(135deg,var(--sunset-gold),var(--sunset-coral));color:var(--ocean-deep);border:none;border-radius:12px;font-weight:600;cursor:pointer;transition:all 0.2s}
-    .email-form button:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(244,162,97,0.4)}
-    .note{font-size:0.875rem;color:#999;margin-bottom:3rem}
-    .back-link{color:var(--ocean-teal);text-decoration:none;font-weight:500}
-    .back-link:hover{color:var(--sunset-coral)}
-    @media(max-width:480px){h1{font-size:2rem}.email-form{flex-direction:column}}
+    :root {
+      --sunset-gold: #F4A261;
+      --sunset-coral: #E76F51;
+      --sunset-peach: #FFBE98;
+      --ocean-deep: #264653;
+      --ocean-teal: #2A9D8F;
+      --ocean-foam: #A8DADC;
+      --sand-light: #FDF8F3;
+      --sand-warm: #E9E0D6;
+      --sand-medium: #C4B7A6;
+      --sand-dark: #4A4238;
+      --mystic-purple: #6B5B95;
+      --mystic-indigo: #4A4063;
+      --phi: 1.618;
+      --phi-xs: 0.382rem;
+      --phi-sm: 0.618rem;
+      --phi-md: 1rem;
+      --phi-lg: 1.618rem;
+      --phi-xl: 2.618rem;
+      --phi-2xl: 4.236rem;
+      --phi-3xl: 6.854rem;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--mystic-indigo) 50%, var(--ocean-deep) 100%);
+      min-height: 100vh;
+      color: var(--sand-light);
+      overflow-x: hidden;
+    }
+
+    /* Sacred Geometry Background */
+    .sacred-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.08;
+      z-index: 0;
+    }
+
+    .sacred-bg svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Animated Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--sunset-gold);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+      25% { transform: translateY(-100px) translateX(50px); opacity: 0.6; }
+      50% { transform: translateY(-200px) translateX(-30px); opacity: 0.3; }
+      75% { transform: translateY(-100px) translateX(-50px); opacity: 0.6; }
+    }
+
+    /* Main Container */
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--phi-lg);
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: var(--phi-2xl) 0;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.618rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--sunset-gold) 0%, var(--sunset-peach) 50%, var(--sunset-coral) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--phi-sm);
+      letter-spacing: -0.02em;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--ocean-foam);
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    .free-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--ocean-teal), var(--mystic-purple));
+      color: white;
+      padding: var(--phi-xs) var(--phi-md);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: var(--phi-md);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(42, 157, 143, 0); }
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(253, 248, 243, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(168, 218, 220, 0.15);
+      border-radius: var(--phi-lg);
+      padding: var(--phi-xl);
+      margin-bottom: var(--phi-lg);
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: backwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--sunset-gold);
+      margin-bottom: var(--phi-md);
+      display: flex;
+      align-items: center;
+      gap: var(--phi-sm);
+    }
+
+    .card-icon {
+      width: 28px;
+      height: 28px;
+      opacity: 0.9;
+    }
+
+    /* Email Capture */
+    .email-section {
+      text-align: center;
+    }
+
+    .email-section p {
+      color: var(--ocean-foam);
+      margin-bottom: var(--phi-lg);
+      line-height: 1.6;
+    }
+
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--phi-sm);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: var(--phi-md);
+      border: 1px solid rgba(168, 218, 220, 0.3);
+      border-radius: var(--phi-md);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--sand-light);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .input-field::placeholder {
+      color: var(--sand-medium);
+    }
+
+    .input-field:focus {
+      border-color: var(--sunset-gold);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.2);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: var(--phi-md) var(--phi-lg);
+      background: linear-gradient(135deg, var(--sunset-gold) 0%, var(--sunset-coral) 100%);
+      color: var(--ocean-deep);
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Outfit', sans-serif;
+      border: none;
+      border-radius: var(--phi-md);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(244, 162, 97, 0.3);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .privacy-note {
+      font-size: 0.8rem;
+      color: var(--sand-medium);
+      margin-top: var(--phi-md);
+    }
+
+    /* Main App */
+    .app-section {
+      display: none;
+    }
+
+    .app-section.active {
+      display: block;
+    }
+
+    /* Tab Navigation */
+    .tabs {
+      display: flex;
+      gap: var(--phi-sm);
+      margin-bottom: var(--phi-lg);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      padding: var(--phi-sm) var(--phi-md);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(168, 218, 220, 0.2);
+      border-radius: 999px;
+      color: var(--ocean-foam);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .tab-btn.active {
+      background: var(--sunset-gold);
+      color: var(--ocean-deep);
+      border-color: var(--sunset-gold);
+    }
+
+    /* Daily Ritual Section */
+    .ritual-controls {
+      display: grid;
+      gap: var(--phi-md);
+      margin-bottom: var(--phi-lg);
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--phi-xs);
+    }
+
+    .control-label {
+      font-size: 0.85rem;
+      color: var(--ocean-foam);
+      font-weight: 600;
+    }
+
+    .select-field {
+      padding: var(--phi-sm) var(--phi-md);
+      border: 1px solid rgba(168, 218, 220, 0.3);
+      border-radius: var(--phi-md);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--sand-light);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .select-field option {
+      background: var(--ocean-deep);
+      color: var(--sand-light);
+    }
+
+    /* Generated Content */
+    .ritual-output {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--phi-md);
+      padding: var(--phi-lg);
+      margin-top: var(--phi-lg);
+      display: none;
+    }
+
+    .ritual-output.visible {
+      display: block;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .ritual-theme {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--sunset-peach);
+      margin-bottom: var(--phi-md);
+    }
+
+    .ritual-section {
+      margin-bottom: var(--phi-lg);
+    }
+
+    .ritual-section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--sunset-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--phi-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--phi-sm);
+    }
+
+    .ritual-section-title::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--sunset-gold);
+      border-radius: 50%;
+    }
+
+    .ritual-content {
+      color: var(--ocean-foam);
+      line-height: 1.7;
+    }
+
+    .ritual-steps {
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .ritual-steps li {
+      counter-increment: step;
+      padding: var(--phi-sm) 0;
+      padding-left: 2.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(168, 218, 220, 0.1);
+    }
+
+    .ritual-steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: var(--phi-sm);
+      width: 1.8rem;
+      height: 1.8rem;
+      background: linear-gradient(135deg, var(--sunset-gold), var(--sunset-coral));
+      color: var(--ocean-deep);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .ritual-steps li:last-child {
+      border-bottom: none;
+    }
+
+    .geometry-visual {
+      text-align: center;
+      padding: var(--phi-lg);
+      margin: var(--phi-md) 0;
+    }
+
+    .geometry-visual svg {
+      width: 120px;
+      height: 120px;
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .principle-card {
+      background: linear-gradient(135deg, rgba(107, 91, 149, 0.3), rgba(74, 64, 99, 0.3));
+      border: 1px solid rgba(107, 91, 149, 0.3);
+      border-radius: var(--phi-md);
+      padding: var(--phi-md);
+      margin-top: var(--phi-sm);
+    }
+
+    .principle-name {
+      font-weight: 700;
+      color: var(--sunset-peach);
+      margin-bottom: var(--phi-xs);
+    }
+
+    .principle-desc {
+      font-size: 0.9rem;
+      color: var(--ocean-foam);
+      opacity: 0.9;
+    }
+
+    /* Loading State */
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--phi-sm);
+      padding: var(--phi-xl);
+      color: var(--ocean-foam);
+    }
+
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(168, 218, 220, 0.2);
+      border-top-color: var(--sunset-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Cross-Sell */
+    .cross-sell {
+      background: linear-gradient(135deg, rgba(42, 157, 143, 0.15), rgba(38, 70, 83, 0.15));
+      border: 1px solid rgba(42, 157, 143, 0.3);
+      border-radius: var(--phi-lg);
+      padding: var(--phi-lg);
+      margin-top: var(--phi-xl);
+      text-align: center;
+    }
+
+    .cross-sell-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ocean-teal);
+      margin-bottom: var(--phi-sm);
+    }
+
+    .cross-sell-text {
+      color: var(--ocean-foam);
+      font-size: 0.95rem;
+      margin-bottom: var(--phi-md);
+    }
+
+    .cross-sell-links {
+      display: flex;
+      gap: var(--phi-sm);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .cross-sell-link {
+      padding: var(--phi-sm) var(--phi-md);
+      background: rgba(42, 157, 143, 0.2);
+      border: 1px solid rgba(42, 157, 143, 0.4);
+      border-radius: var(--phi-md);
+      color: var(--ocean-teal);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cross-sell-link:hover {
+      background: var(--ocean-teal);
+      color: var(--ocean-deep);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: var(--phi-xl) 0;
+      color: var(--sand-medium);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--ocean-foam);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--sunset-gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: var(--phi-lg);
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .tabs {
+        gap: var(--phi-xs);
+      }
+
+      .tab-btn {
+        padding: var(--phi-xs) var(--phi-sm);
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Hidden */
+    .hidden {
+      display: none !important;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">dubltap<span>.</span>io</div>
-    <div class="icon">🧠</div>
-    <div class="free-badge">🆓 FREE FOREVER</div>
-    <h1><span>Mind Expander</span></h1>
-    <p class="tagline">Daily cognitive enhancement using Hermetic principles and sacred geometry. 5 minutes. 7 ancient principles. One unshakeable mind. Coming soon.</p>
-    <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="email" name="email" placeholder="your@email.com" required>
-      <input type="hidden" name="source" value="mind.dubltap.io">
-      <button type="submit">Get Free Access</button>
-    </form>
-    <p class="note">100% free. No credit card. Ever.</p>
-    <a href="https://dubltap.io" class="back-link">← Back to all apps</a>
+  <!-- Sacred Geometry Background -->
+  <div class="sacred-bg">
+    <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="flower" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+          <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="100" cy="50" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="143" cy="75" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="143" cy="125" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="100" cy="150" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="57" cy="125" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+          <circle cx="57" cy="75" r="50" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#flower)"/>
+    </svg>
   </div>
+
+  <!-- Animated Particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="logo">Mind Expander</h1>
+      <p class="tagline">Cognitive Enhancement &#38; Daily Rituals</p>
+      <span class="free-badge">&#10003; 100% Free Forever</span>
+    </header>
+
+    <!-- Email Capture Section -->
+    <section id="emailSection" class="card email-section">
+      <h2 class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+        Unlock Your Daily Ritual
+      </h2>
+      <p>Experience AI-powered cognitive enhancement guided by Hermetic principles, Golden Ratio pacing, and Sacred Geometry visualization.</p>
+      <form class="email-form" id="emailForm">
+        <input 
+          type="text" 
+          class="input-field" 
+          id="nameInput" 
+          placeholder="Your name"
+          required
+        >
+        <input 
+          type="email" 
+          class="input-field" 
+          id="emailInput" 
+          placeholder="your@email.com"
+          required
+        >
+        <button type="submit" class="btn-primary" id="submitBtn">
+          Begin Your Journey
+        </button>
+      </form>
+      <p class="privacy-note">No spam. No credit card. Just pure cognitive expansion.</p>
+    </section>
+
+    <!-- Main App Section -->
+    <section id="appSection" class="app-section">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="ritual">Daily Ritual</button>
+        <button class="tab-btn" data-tab="mindfulness">Mindfulness</button>
+        <button class="tab-btn" data-tab="memory">Memory</button>
+        <button class="tab-btn" data-tab="settings">Settings</button>
+      </div>
+
+      <!-- Daily Ritual Tab -->
+      <div id="ritual-tab" class="card">
+        <h2 class="card-title">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+          Generate Today's Ritual
+        </h2>
+        
+        <div class="ritual-controls">
+          <div class="control-group">
+            <label class="control-label">Focus Area</label>
+            <select class="select-field" id="focusSelect">
+              <option value="Focus">Focus &#38; Concentration</option>
+              <option value="Memory">Memory Enhancement</option>
+              <option value="Calm">Calm &#38; Clarity</option>
+              <option value="Creativity">Creative Flow</option>
+              <option value="Energy">Mental Energy</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Duration</label>
+            <select class="select-field" id="durationSelect">
+              <option value="5">5 minutes (Quick)</option>
+              <option value="10" selected>10 minutes (Standard)</option>
+              <option value="20">20 minutes (Deep)</option>
+              <option value="30">30 minutes (Immersive)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Tone</label>
+            <select class="select-field" id="toneSelect">
+              <option value="Practical">Practical</option>
+              <option value="Balanced" selected>Balanced</option>
+              <option value="Mystical">Mystical</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-primary" id="generateBtn">
+          Generate My Ritual
+        </button>
+
+        <div class="ritual-output" id="ritualOutput">
+          <!-- Generated content appears here -->
+        </div>
+      </div>
+
+      <!-- Mindfulness Tab -->
+      <div id="mindfulness-tab" class="card hidden">
+        <h2 class="card-title">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 1 0 10 10"/>
+            <path d="M12 12l8-8"/>
+          </svg>
+          Mindfulness Session
+        </h2>
+        <div class="ritual-controls">
+          <div class="control-group">
+            <label class="control-label">Session Duration</label>
+            <select class="select-field" id="mindDurationSelect">
+              <option value="5">5 minutes</option>
+              <option value="10" selected>10 minutes</option>
+              <option value="15">15 minutes</option>
+              <option value="20">20 minutes</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Intention (optional)</label>
+            <input type="text" class="input-field" id="intentionInput" placeholder="e.g., Release tension, Find clarity">
+          </div>
+        </div>
+        <button class="btn-primary" id="mindfulnessBtn">
+          Begin Session
+        </button>
+        <div class="ritual-output" id="mindfulnessOutput"></div>
+      </div>
+
+      <!-- Memory Tab -->
+      <div id="memory-tab" class="card hidden">
+        <h2 class="card-title">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.54z"/>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.54z"/>
+          </svg>
+          Memory Exercise
+        </h2>
+        <div class="ritual-controls">
+          <div class="control-group">
+            <label class="control-label">Exercise Type</label>
+            <select class="select-field" id="memoryTypeSelect">
+              <option value="RecallLadder">Recall Ladder</option>
+              <option value="VisualChain">Visual Chain</option>
+              <option value="NumberSequence">Number Sequence</option>
+              <option value="WordAssociation">Word Association</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Difficulty (1-5)</label>
+            <select class="select-field" id="difficultySelect">
+              <option value="1">1 - Beginner</option>
+              <option value="2">2 - Easy</option>
+              <option value="3" selected>3 - Medium</option>
+              <option value="4">4 - Hard</option>
+              <option value="5">5 - Expert</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Topic (optional)</label>
+            <input type="text" class="input-field" id="topicInput" placeholder="e.g., History, Science, Languages">
+          </div>
+        </div>
+        <button class="btn-primary" id="memoryBtn">
+          Generate Exercise
+        </button>
+        <div class="ritual-output" id="memoryOutput"></div>
+      </div>
+
+      <!-- Settings Tab -->
+      <div id="settings-tab" class="card hidden">
+        <h2 class="card-title">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          Profile Settings
+        </h2>
+        <div class="ritual-controls">
+          <div class="control-group">
+            <label class="control-label">Display Name</label>
+            <input type="text" class="input-field" id="displayNameInput" placeholder="Your name">
+          </div>
+          <div class="control-group">
+            <label class="control-label">Default Duration</label>
+            <select class="select-field" id="defaultDurationSelect">
+              <option value="5">5 minutes</option>
+              <option value="10" selected>10 minutes</option>
+              <option value="20">20 minutes</option>
+              <option value="30">30 minutes</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Default Tone</label>
+            <select class="select-field" id="defaultToneSelect">
+              <option value="Practical">Practical</option>
+              <option value="Balanced" selected>Balanced</option>
+              <option value="Mystical">Mystical</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Visualization Style</label>
+            <select class="select-field" id="vizSelect">
+              <option value="Minimal">Minimal</option>
+              <option value="Geometric" selected>Geometric</option>
+              <option value="Vivid">Vivid</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" id="saveSettingsBtn">
+          Save Settings
+        </button>
+        <p class="privacy-note" style="margin-top: var(--phi-md);">Settings are stored locally on your device.</p>
+      </div>
+
+      <!-- Cross-Sell -->
+      <div class="cross-sell">
+        <h3 class="cross-sell-title">Expand Your Capabilities</h3>
+        <p class="cross-sell-text">Explore more AI-powered tools from dubltap.io</p>
+        <div class="cross-sell-links">
+          <a href="https://cliff.dubltap.io" class="cross-sell-link">CLIFF NOTEZ - Document Analysis</a>
+          <a href="https://hustle.dubltap.io" class="cross-sell-link">Side Hustle Copilot</a>
+          <a href="https://maven.dubltap.io" class="cross-sell-link">Market Maven</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&#169; 2026 <a href="https://dubltap.io">dubltap.io</a> &#8212; AI that actually does stuff.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Configuration
+    const API_BASE = 'https://api.dubltap.io';
+    const APP_NAME = 'mind-expander';
+    
+    // DOM Elements
+    const emailSection = document.getElementById('emailSection');
+    const appSection = document.getElementById('appSection');
+    const emailForm = document.getElementById('emailForm');
+    const nameInput = document.getElementById('nameInput');
+    const emailInput = document.getElementById('emailInput');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Tab Elements
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const ritualTab = document.getElementById('ritual-tab');
+    const mindfulnessTab = document.getElementById('mindfulness-tab');
+    const memoryTab = document.getElementById('memory-tab');
+    const settingsTab = document.getElementById('settings-tab');
+    
+    // State
+    let userProfile = {
+      name: '',
+      email: '',
+      displayName: '',
+      defaultDuration: 10,
+      defaultTone: 'Balanced',
+      visualizationPreference: 'Geometric'
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      loadProfile();
+      checkAccess();
+      setupEventListeners();
+    });
+
+    // Create floating particles
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 15) + 's';
+        container.appendChild(particle);
+      }
+    }
+
+    // Load profile from localStorage
+    function loadProfile() {
+      const saved = localStorage.getItem('mind_expander_profile');
+      if (saved) {
+        userProfile = { ...userProfile, ...JSON.parse(saved) };
+        
+        // Apply to settings fields
+        document.getElementById('displayNameInput').value = userProfile.displayName || userProfile.name;
+        document.getElementById('defaultDurationSelect').value = userProfile.defaultDuration;
+        document.getElementById('defaultToneSelect').value = userProfile.defaultTone;
+        document.getElementById('vizSelect').value = userProfile.visualizationPreference;
+        
+        // Apply defaults to ritual controls
+        document.getElementById('durationSelect').value = userProfile.defaultDuration;
+        document.getElementById('toneSelect').value = userProfile.defaultTone;
+      }
+    }
+
+    // Check if user has access
+    function checkAccess() {
+      const hasAccess = localStorage.getItem('mind_expander_access');
+      if (hasAccess === 'true') {
+        showApp();
+      }
+    }
+
+    // Show main app
+    function showApp() {
+      emailSection.classList.add('hidden');
+      appSection.classList.add('active');
+    }
+
+    // Setup event listeners
+    function setupEventListeners() {
+      // Email form
+      emailForm.addEventListener('submit', handleEmailSubmit);
+      
+      // Tabs
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+      });
+      
+      // Generate buttons
+      document.getElementById('generateBtn').addEventListener('click', generateRitual);
+      document.getElementById('mindfulnessBtn').addEventListener('click', generateMindfulness);
+      document.getElementById('memoryBtn').addEventListener('click', generateMemory);
+      document.getElementById('saveSettingsBtn').addEventListener('click', saveSettings);
+    }
+
+    // Handle email submission
+    async function handleEmailSubmit(e) {
+      e.preventDefault();
+      
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      
+      if (!name || !email) return;
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Unlocking...';
+      
+      try {
+        // Save to API
+        await fetch(`${API_BASE}/api/email-capture`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            name,
+            source: APP_NAME,
+            tags: ['mind-expander', 'free-user']
+          })
+        });
+      } catch (err) {
+        console.log('Email capture API not available, continuing...');
+      }
+      
+      // Save locally
+      userProfile.name = name;
+      userProfile.email = email;
+      userProfile.displayName = name;
+      localStorage.setItem('mind_expander_profile', JSON.stringify(userProfile));
+      localStorage.setItem('mind_expander_access', 'true');
+      
+      // Update settings field
+      document.getElementById('displayNameInput').value = name;
+      
+      // Show app
+      showApp();
+      
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Begin Your Journey';
+    }
+
+    // Switch tabs
+    function switchTab(tabName) {
+      // Update buttons
+      tabBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tab === tabName);
+      });
+      
+      // Update panels
+      ritualTab.classList.toggle('hidden', tabName !== 'ritual');
+      mindfulnessTab.classList.toggle('hidden', tabName !== 'mindfulness');
+      memoryTab.classList.toggle('hidden', tabName !== 'memory');
+      settingsTab.classList.toggle('hidden', tabName !== 'settings');
+    }
+
+    // Generate Daily Ritual
+    async function generateRitual() {
+      const focus = document.getElementById('focusSelect').value;
+      const duration = document.getElementById('durationSelect').value;
+      const tone = document.getElementById('toneSelect').value;
+      const output = document.getElementById('ritualOutput');
+      const btn = document.getElementById('generateBtn');
+      
+      btn.disabled = true;
+      btn.textContent = 'Generating...';
+      
+      output.innerHTML = '<div class="loading"><div class="spinner"></div><span>Crafting your ritual...</span></div>';
+      output.classList.add('visible');
+      
+      try {
+        const response = await fetch(`${API_BASE}/api/ai-query`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            app: APP_NAME,
+            action: 'daily-ritual',
+            prompt: buildRitualPrompt(focus, duration, tone)
+          })
+        });
+        
+        if (!response.ok) throw new Error('API error');
+        
+        const data = await response.json();
+        displayRitual(data.result || data.content);
+      } catch (err) {
+        // Fallback: generate locally with mock data
+        displayRitual(generateMockRitual(focus, duration, tone));
+      }
+      
+      btn.disabled = false;
+      btn.textContent = 'Generate My Ritual';
+    }
+
+    function buildRitualPrompt(focus, duration, tone) {
+      return `Generate a ${duration}-minute cognitive enhancement ritual focused on "${focus}" with a ${tone} tone.
+
+Include:
+1. A theme/title for today's practice
+2. 4-6 steps with Golden Ratio timing (fibonacci durations)
+3. A Sacred Geometry visualization anchor (describe the shape and how to visualize it)
+4. One relevant Hermetic principle with a brief application
+5. A "quantum reflection" prompt to end the session
+
+Format as JSON:
+{
+  "theme": "string",
+  "totalMinutes": number,
+  "steps": [{"step": number, "instruction": "string", "durationSeconds": number}],
+  "geometry": {"shape": "string", "visualization": "string"},
+  "hermeticPrinciple": {"name": "string", "application": "string"},
+  "reflection": "string"
+}`;
+    }
+
+    function generateMockRitual(focus, duration, tone) {
+      const themes = {
+        'Focus': 'The Singular Point of Attention',
+        'Memory': 'The Palace of Infinite Recall',
+        'Calm': 'The Still Waters Within',
+        'Creativity': 'The Infinite Canvas',
+        'Energy': 'The Rising Solar Force'
+      };
+      
+      const geometries = {
+        'Focus': { shape: 'Vesica Piscis', visualization: 'Two overlapping circles creating a pointed oval - the lens of focused perception' },
+        'Memory': { shape: 'Metatron\'s Cube', visualization: 'Thirteen circles connected by lines, containing all Platonic solids - the structure of stored knowledge' },
+        'Calm': { shape: 'Seed of Life', visualization: 'Seven overlapping circles forming a flower - the pattern of peaceful expansion' },
+        'Creativity': { shape: 'Fibonacci Spiral', visualization: 'An ever-expanding golden spiral - the path of creative unfolding' },
+        'Energy': { shape: 'Merkaba', visualization: 'Two interlocking tetrahedrons creating a 3D star - the vehicle of light energy' }
+      };
+      
+      const principles = {
+        'Focus': { name: 'The Principle of Mentalism', application: 'All is Mind. Direct your mental energy to a single point, and reality bends to your attention.' },
+        'Memory': { name: 'The Principle of Correspondence', application: 'As above, so below. Your memories mirror universal patterns - access one, access all.' },
+        'Calm': { name: 'The Principle of Rhythm', application: 'Everything flows. Ride the pendulum consciously, finding stillness at the center.' },
+        'Creativity': { name: 'The Principle of Polarity', application: 'Opposites are identical in nature. Creative tension births new realities.' },
+        'Energy': { name: 'The Principle of Vibration', application: 'Nothing rests. Raise your vibration to align with higher energies.' }
+      };
+      
+      const dur = parseInt(duration);
+      const fibSequence = [1, 1, 2, 3, 5, 8, 13];
+      let totalFib = 0;
+      const steps = [];
+      
+      for (let i = 0; i < 5 && totalFib < dur * 60; i++) {
+        const fibDuration = fibSequence[i + 2] * (dur / 2);
+        steps.push({
+          step: i + 1,
+          instruction: getStepInstruction(i, focus, tone),
+          durationSeconds: Math.round(fibDuration)
+        });
+        totalFib += fibDuration;
+      }
+      
+      return JSON.stringify({
+        theme: themes[focus],
+        totalMinutes: dur,
+        steps: steps,
+        geometry: geometries[focus],
+        hermeticPrinciple: principles[focus],
+        reflection: getReflectionPrompt(focus, tone)
+      });
+    }
+
+    function getStepInstruction(index, focus, tone) {
+      const instructions = {
+        0: `Begin by settling into a comfortable position. Close your eyes and take three deep breaths, each one deeper than the last.`,
+        1: `Visualize your ${focus.toLowerCase()} as a golden light at your center. Feel it growing stronger with each breath.`,
+        2: `Hold the Sacred Geometry symbol in your mind's eye. Let its perfect patterns organize your mental space.`,
+        3: `Recite silently: "I am aligned with ${focus.toLowerCase()}. My mind expands." Feel the truth of these words.`,
+        4: `Slowly return your awareness to your body. Notice how your state has shifted. Carry this ${focus.toLowerCase()} with you.`
+      };
+      return instructions[index] || instructions[0];
+    }
+
+    function getReflectionPrompt(focus, tone) {
+      const reflections = {
+        'Focus': 'What single thought, if you held it with unwavering attention for the next hour, would transform your day?',
+        'Memory': 'What memory from your past contains wisdom you haven\'t fully extracted yet?',
+        'Calm': 'Where in your life have you been fighting the current? What would it feel like to float instead?',
+        'Creativity': 'What impossible combination of ideas are you avoiding because it seems too strange?',
+        'Energy': 'If your energy was unlimited, what would you do first? What\'s really stopping you now?'
+      };
+      return reflections[focus];
+    }
+
+    function displayRitual(data) {
+      const output = document.getElementById('ritualOutput');
+      let ritual;
+      
+      try {
+        ritual = typeof data === 'string' ? JSON.parse(data) : data;
+      } catch {
+        output.innerHTML = '<p style="color: var(--sunset-coral);">Error parsing ritual data. Please try again.</p>';
+        return;
+      }
+      
+      const geometryShapes = {
+        'Vesica Piscis': `<svg viewBox="0 0 100 100"><circle cx="35" cy="50" r="30" fill="none" stroke="var(--sunset-gold)" stroke-width="1.5"/><circle cx="65" cy="50" r="30" fill="none" stroke="var(--sunset-gold)" stroke-width="1.5"/></svg>`,
+        'Metatron\'s Cube': `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="50" cy="25" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="50" cy="75" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="28" cy="37" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="72" cy="37" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="28" cy="63" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="72" cy="63" r="8" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><line x1="50" y1="25" x2="28" y2="37" stroke="var(--sunset-gold)" stroke-width="0.5"/><line x1="50" y1="25" x2="72" y2="37" stroke="var(--sunset-gold)" stroke-width="0.5"/><line x1="28" y1="37" x2="28" y2="63" stroke="var(--sunset-gold)" stroke-width="0.5"/><line x1="72" y1="37" x2="72" y2="63" stroke="var(--sunset-gold)" stroke-width="0.5"/><line x1="28" y1="63" x2="50" y2="75" stroke="var(--sunset-gold)" stroke-width="0.5"/><line x1="72" y1="63" x2="50" y2="75" stroke="var(--sunset-gold)" stroke-width="0.5"/></svg>`,
+        'Seed of Life': `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="50" cy="35" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="63" cy="42" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="63" cy="58" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="50" cy="65" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="37" cy="58" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/><circle cx="37" cy="42" r="15" fill="none" stroke="var(--sunset-gold)" stroke-width="1"/></svg>`,
+        'Fibonacci Spiral': `<svg viewBox="0 0 100 100"><path d="M50,50 Q50,30 70,30 Q90,30 90,50 Q90,80 60,80 Q20,80 20,40 Q20,10 60,10" fill="none" stroke="var(--sunset-gold)" stroke-width="1.5"/></svg>`,
+        'Merkaba': `<svg viewBox="0 0 100 100"><polygon points="50,15 85,75 15,75" fill="none" stroke="var(--sunset-gold)" stroke-width="1.5"/><polygon points="50,85 15,25 85,25" fill="none" stroke="var(--sunset-gold)" stroke-width="1.5"/></svg>`
+      };
+      
+      const shapeSvg = geometryShapes[ritual.geometry?.shape] || geometryShapes['Seed of Life'];
+      
+      output.innerHTML = `
+        <h3 class="ritual-theme">${ritual.theme}</h3>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Your ${ritual.totalMinutes}-Minute Practice</h4>
+          <ol class="ritual-steps">
+            ${ritual.steps.map(s => `<li>${s.instruction} <em style="color: var(--sand-medium); font-size: 0.85em;">(${Math.round(s.durationSeconds / 60)}min ${s.durationSeconds % 60}sec)</em></li>`).join('')}
+          </ol>
+        </div>
+        
+        <div class="geometry-visual">
+          ${shapeSvg}
+          <p style="color: var(--ocean-foam); font-size: 0.9rem; margin-top: var(--phi-sm);">${ritual.geometry?.shape}: ${ritual.geometry?.visualization}</p>
+        </div>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Hermetic Wisdom</h4>
+          <div class="principle-card">
+            <p class="principle-name">${ritual.hermeticPrinciple?.name}</p>
+            <p class="principle-desc">${ritual.hermeticPrinciple?.application}</p>
+          </div>
+        </div>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Quantum Reflection</h4>
+          <p class="ritual-content" style="font-style: italic;">"${ritual.reflection}"</p>
+        </div>
+      `;
+    }
+
+    // Generate Mindfulness Session
+    async function generateMindfulness() {
+      const duration = document.getElementById('mindDurationSelect').value;
+      const intention = document.getElementById('intentionInput').value;
+      const output = document.getElementById('mindfulnessOutput');
+      const btn = document.getElementById('mindfulnessBtn');
+      
+      btn.disabled = true;
+      btn.textContent = 'Generating...';
+      
+      output.innerHTML = '<div class="loading"><div class="spinner"></div><span>Creating your session...</span></div>';
+      output.classList.add('visible');
+      
+      // Generate mock mindfulness session
+      const session = generateMockMindfulness(duration, intention);
+      
+      setTimeout(() => {
+        displayMindfulness(session);
+        btn.disabled = false;
+        btn.textContent = 'Begin Session';
+      }, 1500);
+    }
+
+    function generateMockMindfulness(duration, intention) {
+      const dur = parseInt(duration);
+      const phases = [
+        { name: 'Grounding', duration: Math.round(dur * 0.15), instruction: 'Feel your body connecting to the earth. Notice the weight of your limbs.' },
+        { name: 'Breath Awareness', duration: Math.round(dur * 0.25), instruction: 'Follow your breath without changing it. Inhale... exhale... simply observe.' },
+        { name: 'Body Scan', duration: Math.round(dur * 0.25), instruction: 'Slowly move attention from crown to toes, releasing tension as you go.' },
+        { name: 'Open Awareness', duration: Math.round(dur * 0.25), instruction: 'Expand your attention to include sounds, sensations, and the space around you.' },
+        { name: 'Integration', duration: Math.round(dur * 0.10), instruction: 'Gently return. Carry this peace into your next moments.' }
+      ];
+      
+      return {
+        totalMinutes: dur,
+        intention: intention || 'Present moment awareness',
+        breathPattern: '4-7-8 (Inhale 4, Hold 7, Exhale 8)',
+        phases: phases
+      };
+    }
+
+    function displayMindfulness(session) {
+      const output = document.getElementById('mindfulnessOutput');
+      
+      output.innerHTML = `
+        <h3 class="ritual-theme">${session.intention}</h3>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Breath Pattern</h4>
+          <p class="ritual-content">${session.breathPattern}</p>
+        </div>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">${session.totalMinutes}-Minute Session Phases</h4>
+          <ol class="ritual-steps">
+            ${session.phases.map(p => `<li><strong>${p.name}</strong> (${p.duration} min)<br><span style="opacity: 0.85;">${p.instruction}</span></li>`).join('')}
+          </ol>
+        </div>
+      `;
+    }
+
+    // Generate Memory Exercise
+    async function generateMemory() {
+      const type = document.getElementById('memoryTypeSelect').value;
+      const difficulty = document.getElementById('difficultySelect').value;
+      const topic = document.getElementById('topicInput').value;
+      const output = document.getElementById('memoryOutput');
+      const btn = document.getElementById('memoryBtn');
+      
+      btn.disabled = true;
+      btn.textContent = 'Generating...';
+      
+      output.innerHTML = '<div class="loading"><div class="spinner"></div><span>Creating your exercise...</span></div>';
+      output.classList.add('visible');
+      
+      const exercise = generateMockMemory(type, difficulty, topic);
+      
+      setTimeout(() => {
+        displayMemory(exercise);
+        btn.disabled = false;
+        btn.textContent = 'Generate Exercise';
+      }, 1500);
+    }
+
+    function generateMockMemory(type, difficulty, topic) {
+      const exercises = {
+        'RecallLadder': {
+          name: 'Recall Ladder',
+          description: 'Build a chain of connected memories, each triggering the next.',
+          prompt: 'Start with a recent positive memory. What does it connect to? Follow the chain back through time.',
+          steps: ['Recall a moment from today', 'What does it remind you of from this week?', 'What about this month?', 'This year?', 'Further back?']
+        },
+        'VisualChain': {
+          name: 'Visual Chain',
+          description: 'Link random images in a memorable story.',
+          prompt: 'Visualize these items connecting in an absurd, vivid story.',
+          items: ['Golden key', 'Purple elephant', 'Melting clock', 'Glass mountain', 'Singing river']
+        },
+        'NumberSequence': {
+          name: 'Number Sequence',
+          description: 'Memorize and recall number patterns.',
+          prompt: 'Study this sequence for 30 seconds, then close your eyes and recall it.',
+          sequence: Array.from({length: 3 + parseInt(difficulty)}, () => Math.floor(Math.random() * 10)).join(' - ')
+        },
+        'WordAssociation': {
+          name: 'Word Association',
+          description: 'Create meaningful connections between unrelated words.',
+          prompt: 'Connect each word to the next with a vivid mental image.',
+          words: ['Ocean', 'Library', 'Thunder', 'Butterfly', 'Crystal']
+        }
+      };
+      
+      return {
+        ...exercises[type],
+        difficulty: difficulty,
+        topic: topic || 'General'
+      };
+    }
+
+    function displayMemory(exercise) {
+      const output = document.getElementById('memoryOutput');
+      
+      let content = exercise.steps 
+        ? exercise.steps.map((s, i) => `<li>${s}</li>`).join('')
+        : exercise.items 
+          ? exercise.items.map(i => `<li>${i}</li>`).join('')
+          : exercise.words
+            ? exercise.words.map(w => `<li>${w}</li>`).join('')
+            : `<li>${exercise.sequence}</li>`;
+      
+      output.innerHTML = `
+        <h3 class="ritual-theme">${exercise.name}</h3>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Difficulty Level ${exercise.difficulty}</h4>
+          <p class="ritual-content">${exercise.description}</p>
+        </div>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Instructions</h4>
+          <p class="ritual-content">${exercise.prompt}</p>
+        </div>
+        
+        <div class="ritual-section">
+          <h4 class="ritual-section-title">Exercise Elements</h4>
+          <ol class="ritual-steps">${content}</ol>
+        </div>
+      `;
+    }
+
+    // Save Settings
+    function saveSettings() {
+      userProfile.displayName = document.getElementById('displayNameInput').value;
+      userProfile.defaultDuration = document.getElementById('defaultDurationSelect').value;
+      userProfile.defaultTone = document.getElementById('defaultToneSelect').value;
+      userProfile.visualizationPreference = document.getElementById('vizSelect').value;
+      
+      localStorage.setItem('mind_expander_profile', JSON.stringify(userProfile));
+      
+      // Apply to ritual controls
+      document.getElementById('durationSelect').value = userProfile.defaultDuration;
+      document.getElementById('toneSelect').value = userProfile.defaultTone;
+      
+      const btn = document.getElementById('saveSettingsBtn');
+      btn.textContent = 'Saved!';
+      setTimeout(() => btn.textContent = 'Save Settings', 1500);
+    }
+  </script>
 </body>
 </html>
