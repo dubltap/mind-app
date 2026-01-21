@@ -1133,12 +1133,15 @@ Format as JSON:
     }
 
     function displayRitual(data) {
-      const output = document.getElementById('ritualOutput');
-      let ritual;
-      
-      try {
-        ritual = typeof data === 'string' ? JSON.parse(data) : data;
-      } catch {
+  const output = document.getElementById('ritualOutput');
+  let ritual;
+  
+  try {
+    // Strip markdown code blocks if present
+    let cleanData = typeof data === 'string' ? data : JSON.stringify(data);
+    cleanData = cleanData.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+    ritual = JSON.parse(cleanData);
+  } catch {
         output.innerHTML = '<p style="color: var(--sunset-coral);">Error parsing ritual data. Please try again.</p>';
         return;
       }
